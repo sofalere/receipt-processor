@@ -1,8 +1,8 @@
 import express from 'express';
+import receiptsApi from './routes/receiptsApi.js';
 
 const app = express();
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+
+app.use("/receipts", receiptsApi)
 
 export default app;
