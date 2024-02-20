@@ -1,4 +1,4 @@
-import calculatePoints from "../utils/calculatePoints.js";
+import PointCalculator from "../utils/calculatePoints.js";
 import processReceipt from "../utils/processReceipt.js";
 import { getIdIfReceiptExists, saveReceipt } from "../services/inMemoryStorage.js";
 
@@ -8,7 +8,7 @@ const addReceipt = (req, res) => {
     let id = getIdIfReceiptExists(receipt);
 
     if (!id) {
-      const points = calculatePoints(receipt);
+      const points = new PointCalculator().calculatePoints(receipt);
       const processedReceipt = processReceipt(receipt, points);
       saveReceipt(processedReceipt);
 
