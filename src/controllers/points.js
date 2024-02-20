@@ -1,7 +1,6 @@
 import { getReceiptById } from "../services/inMemoryStorage.js";
 
 const getPoints = (req, res) => {
-  const id = req.params["id"];
   try {
     const id = req.params["id"];
     const receipt = getReceiptById(id);

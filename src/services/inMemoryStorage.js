@@ -2,7 +2,6 @@ const receiptsStorage = [];
 
 const getIdIfReceiptExists = (newReceipt) => {
   let id = false;
-  console.log(receiptsStorage);
 
   receiptsStorage.some((receipt) => {
     if (receipt.purchaseDate === newReceipt.purchaseDate &&
