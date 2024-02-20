@@ -1,8 +1,8 @@
 import express from 'express';
-import processReceipt from "../controllers/receipts.js"
+import addReceipt from "../controllers/receipts.js"
 const router = express.Router();
 
-router.post('/process', processReceipt);
+router.post('/process', addReceipt);
 router.get('/:id/points', (req, res) => {
   res.send('Hello World!');
 });
