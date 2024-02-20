@@ -36,7 +36,7 @@ docker compose run server npm run test
 ## Features
 
 #### Generates a unique id for each unique receipt added
-"http://localhost:3000/receipts/process"
+POST "http://localhost:3000/receipts/process"
 
 - a receipt is considered unique if no other saved receipts have the same purchase date, purchase time, and total
 
@@ -44,7 +44,7 @@ docker compose run server npm run test
 - the PointCalculator utility is responsible for this
 
 #### Retrieves points given an id
-"http://localhost:3000/receipts/:id/points"
+GET "http://localhost:3000/receipts/:id/points"
 
 - will return an error message if id does not exist
 
