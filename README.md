@@ -1,4 +1,4 @@
-# Welcome to the Recept Processor!
+# Welcome to the Receipt Processor!
 
 ## Getting Started
 
