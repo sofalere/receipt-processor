@@ -6,7 +6,7 @@ import {
   ITEMS_DESCRIPTION_MULTIPLIER,
   PURCHASE_DATE_ODD_POINTS,
   PURCHASE_TIME_WINDOW_POINTS
-} from "../constants/points.js";
+} from "../constants/pointsToAdd.js";
 
 // helpers for point calculations
 const isAlphanumeric = (str) => {

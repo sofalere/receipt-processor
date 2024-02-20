@@ -1,12 +1,19 @@
 const receiptsStorage = [];
 
-const receiptAlreadySaved = (newReceipt) => {
-  return receiptsStorage.some((receipt) => {
+const getIdIfReceiptExists = (newReceipt) => {
+  let id = false;
+
+  receiptsStorage.some((receipt) => {
     receipt = receipt[Object.keys(receipt)[0]]
-    return (receipt.purchaseDate === newReceipt.purchaseDate &&
+    if (receipt.purchaseDate === newReceipt.purchaseDate &&
             receipt.purchaseTime === newReceipt.purchaseTime &&
-            receipt.total === newReceipt.total);
+            receipt.total === newReceipt.total) {
+              id = receipt.id;
+              return true;
+            }
   })
+
+  return id;
 }
 
 const saveReceipt = (receipt) => {
@@ -14,6 +21,6 @@ const saveReceipt = (receipt) => {
 }
 
 export {
-  receiptAlreadySaved,
+  getIdIfReceiptExists,
   saveReceipt
 }
